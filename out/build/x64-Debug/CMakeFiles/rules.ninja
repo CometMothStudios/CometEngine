@@ -18,6 +18,15 @@ msvc_deps_prefix = Note: including file:
 
 
 #############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__Comet_unscanned_Debug
+  deps = msvc
+  command = ${LAUNCHER}${CODE_CHECK}C:\PROGRA~1\MICROS~1\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\Hostx64\x64\cl.exe  /nologo $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
+  description = Building C object $out
+
+
+#############################################
 # Rule for generating CXX dependencies.
 
 rule CXX_SCAN__Comet_Debug
